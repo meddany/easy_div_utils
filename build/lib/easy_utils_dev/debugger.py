@@ -3,7 +3,7 @@ from datetime import datetime
 from logging.handlers import RotatingFileHandler
 from .utils import getRandomKey
 from .custom_env import custom_env , setupEnvironment , insertKey
-
+import json
 
 
 def setGlobalHomePath( path ) :
@@ -14,49 +14,55 @@ def setGlobalHomePath( path ) :
 
 
 class DEBUGGER:
-    def __init__(self, name, level='info', onscreen=True,log_rotation=3,homePath=None,id=getRandomKey(9) ):
+    def __init__(self, name, level='info', onscreen=True,log_rotation=3,homePath=None,id=getRandomKey(9),stream_service=None , streampath='/debugger/stream/log'):
         env = custom_env()
         self.logger = logging.getLogger(name)
         self.set_level(level)
         self.LOG_SIZE_THRESHOLD = 10 * 1024 * 1024
         self.BACKUP_COUNT = log_rotation
         self.homePath = homePath
+        self.onScreen= onscreen
         self.id = id
+        self.stream_service = stream_service
         self.name = name
+        self.streampath = streampath
         setupEnvironment( 'debugger' )
         env['debugger'][id] = self
         path = self.homepath(homePath)
         # Create a formatter and add it to the handler
         f = f"[%(asctime)s]-[{name}]-[%(levelname)s]: %(message)s"
         formatter = logging.Formatter(f , datefmt='%Y-%m-%d %H:%M:%S' )
-
         # Create a file handler and set the formatter
         file_handler = RotatingFileHandler(path ,  maxBytes=self.LOG_SIZE_THRESHOLD , backupCount=self.BACKUP_COUNT )
         file_handler.setFormatter(formatter)
 
-
-        # Create a stream handler and set the formatter
-        self.stream_handler = logging.StreamHandler()
-        self.stream_handler.setFormatter(formatter)
-
         # Add the file handler to the logger
         self.logger.addHandler(file_handler)
-        self.logger.addHandler(self.stream_handler)
-
+        # self.logger.addHandler(self.stream_handler)
+        self.logger.addFilter(self.on_log )
         if onscreen : self.enable_print()
         elif not onscreen : self.disable_print()
 
+    
+    def on_log(self , record) :
+        if self.stream_service is not None or self.onScreen :
+            d = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            l = f"[{d}] - [{self.name}] - [{record.levelname}]: {record.getMessage()}"
+        if self.stream_service is not None :
+            self.stream_service.emit( self.streampath , json.dumps({
+                'message' : l ,
+                'level' : record.levelname ,
+                'msg' : record.getMessage(),
+                'date' : d ,
+                'id' : self.id
+            }))
+        if self.onScreen :
+            print(l)
 
-    def callback( original_function ) :
-        def wrapper(*args, **kwargs):
-            result = original_function(*args, **kwargs)
-            print(f"Function '{original_function.__name__}' has finished running.")
 
     def change_log_size(self, size):
         self.LOG_SIZE_THRESHOLD = size
     
-
-        
 
     def homepath(self , path=None ) :
         env = custom_env()
@@ -76,10 +82,10 @@ class DEBUGGER:
 
 
     def enable_print(self) :
-        self.logger.addHandler(self.stream_handler)
+        self.onScreen = True
 
     def disable_print(self) : 
-         self.logger.removeHandler(self.stream_handler)
+        self.onScreen = False
 
 
     def changeHomePath( self , path ) :
@@ -112,11 +118,3 @@ class DEBUGGER:
 
     def critical(self, message):
         self.logger.critical(message)
-
-
-    def get_current_function(self):
-        frame = inspect.currentframe().f_back.f_back
-        function_name = frame.f_code.co_name
-        # print(function_name)
-        return function_name
-    

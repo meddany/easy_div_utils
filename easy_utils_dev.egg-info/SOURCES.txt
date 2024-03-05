@@ -13,4 +13,3 @@ easy_utils_dev.egg-info/SOURCES.txt
 easy_utils_dev.egg-info/dependency_links.txt
 easy_utils_dev.egg-info/requires.txt
 easy_utils_dev.egg-info/top_level.txt
-tests/test.py
