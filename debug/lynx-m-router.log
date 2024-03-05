@@ -1,0 +1,16 @@
+[2024-01-23 03:02:58]-[lynx-m-router]-[INFO]: setting global enviroment variable lynxHome=e:\Working\work\Lynx\backend
+[2024-01-23 03:02:58]-[lynx-m-router]-[INFO]: setting global enviroment variable pyserver=127.0.0.1
+[2024-01-23 03:02:58]-[lynx-m-router]-[INFO]: setting global enviroment variable appName=Lynx
+[2024-01-23 03:02:58]-[lynx-m-router]-[INFO]: setting global enviroment variable pyPort=6512
+[2024-01-23 03:02:58]-[lynx-m-router]-[INFO]: setting global enviroment variable development=True
+[2024-01-23 03:02:58]-[lynx-m-router]-[INFO]: setting global enviroment variable wwwProtocol=http
+[2024-01-23 03:02:58]-[lynx-m-router]-[INFO]: setting global enviroment variable release=23.6.1
+[2024-01-23 03:02:58]-[lynx-m-router]-[INFO]: setting global enviroment variable processAutoStart=True
+[2024-01-23 03:02:58]-[lynx-m-router]-[INFO]: setting global enviroment variable maxLogSize=30
+[2024-01-23 03:02:58]-[lynx-m-router]-[INFO]: setting global enviroment variable heartBeat=120
+[2024-01-23 03:02:58]-[lynx-m-router]-[INFO]: setting global enviroment variable enterpriseDomain=135.245.192.7
+[2024-01-23 03:02:58]-[lynx-m-router]-[INFO]: setting global enviroment variable comments=['pyport and pyaddress port must be the same', 'maxLogSize is in Megabyte']
+[2024-01-23 03:02:58]-[lynx-m-router]-[INFO]: Checking if systems db file exists : True
+[2024-01-23 03:02:58]-[lynx-m-router]-[INFO]: setting global enviroment variable pyPid=27908
+[2024-01-23 03:02:58]-[lynx-m-router]-[INFO]: main service is running with pid = 27908
+[2024-01-23 03:02:58]-[lynx-m-router]-[INFO]: APP STARTED
