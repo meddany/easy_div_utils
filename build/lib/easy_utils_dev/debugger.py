@@ -4,7 +4,7 @@ from logging.handlers import RotatingFileHandler
 from .utils import getRandomKey
 from .custom_env import custom_env , setupEnvironment , insertKey
 import json
-
+from .uiserver import UISERVER
 
 def setGlobalHomePath( path ) :
     env = custom_env()
@@ -14,7 +14,7 @@ def setGlobalHomePath( path ) :
 
 
 class DEBUGGER:
-    def __init__(self, name, level='info', onscreen=True,log_rotation=3,homePath=None,id=getRandomKey(9),stream_service=None , streampath='/debugger/stream/log'):
+    def __init__(self, name, level='error', onscreen=True,log_rotation=3,homePath=None,id=getRandomKey(9)):
         env = custom_env()
         self.logger = logging.getLogger(name)
         self.set_level(level)
@@ -23,9 +23,8 @@ class DEBUGGER:
         self.homePath = homePath
         self.onScreen= onscreen
         self.id = id
-        self.stream_service = stream_service
+        self.stream_service = None
         self.name = name
-        self.streampath = streampath
         setupEnvironment( 'debugger' )
         env['debugger'][id] = self
         path = self.homepath(homePath)
@@ -35,7 +34,6 @@ class DEBUGGER:
         # Create a file handler and set the formatter
         file_handler = RotatingFileHandler(path ,  maxBytes=self.LOG_SIZE_THRESHOLD , backupCount=self.BACKUP_COUNT )
         file_handler.setFormatter(formatter)
-
         # Add the file handler to the logger
         self.logger.addHandler(file_handler)
         # self.logger.addHandler(self.stream_handler)
@@ -43,7 +41,14 @@ class DEBUGGER:
         if onscreen : self.enable_print()
         elif not onscreen : self.disable_print()
 
-    
+    def addStreamService( self , socketio , streampath='/debugger/stream/log' ) :
+        """
+        This function takes a live socketio server. it emit the log message using default path which is /debugger/stream/log
+        """
+        self.stream_service = socketio
+        self.streampath = streampath
+        
+
     def on_log(self , record) :
         if self.stream_service is not None or self.onScreen :
             d = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
