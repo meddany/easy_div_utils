@@ -4,8 +4,10 @@ easy_utils_dev/__init__.py
 easy_utils_dev/custom_env.py
 easy_utils_dev/debugger.py
 easy_utils_dev/encryptor.py
+easy_utils_dev/ne1830PSS.py
 easy_utils_dev/optics_utils.py
 easy_utils_dev/simple_sqlite.py
+easy_utils_dev/ssh.py
 easy_utils_dev/uiserver.py
 easy_utils_dev/utils.py
 easy_utils_dev.egg-info/PKG-INFO

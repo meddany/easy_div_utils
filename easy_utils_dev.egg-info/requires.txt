@@ -1,2 +1,6 @@
 psutil
 ping3
+flask_socketio
+flask_cors
+engineio
+paramiko

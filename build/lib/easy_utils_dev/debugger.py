@@ -14,7 +14,7 @@ def setGlobalHomePath( path ) :
 
 
 class DEBUGGER:
-    def __init__(self, name, level='error', onscreen=True,log_rotation=3,homePath=None,id=getRandomKey(9)):
+    def __init__(self, name, level='info', onscreen=True,log_rotation=3,homePath=None,id=getRandomKey(9)):
         env = custom_env()
         self.logger = logging.getLogger(name)
         self.set_level(level)
