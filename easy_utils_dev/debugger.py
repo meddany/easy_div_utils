@@ -50,9 +50,9 @@ class DEBUGGER:
         
 
     def on_log(self , record) :
-        if self.stream_service is not None or self.onScreen :
-            d = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            l = f"[{d}] - [{self.name}] - [{record.levelname}]: {record.getMessage()}"
+        d = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        l = f"[{d}] - [{self.name}] - [{record.levelname}]: {record.getMessage()}"
+        open(self.homePath , 'a+').write(f"{l}\n")
         if self.stream_service is not None :
             self.stream_service.emit( self.streampath , json.dumps({
                 'message' : l ,

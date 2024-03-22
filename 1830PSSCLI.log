@@ -1,0 +1,138 @@
+[2024-03-23 00:31:06] - [1830PSSCLI] - [INFO]: ssh to nfmt vm nsested ssh  [ ip  =>  151.98.30.92 ] ..
+[2024-03-23 00:31:08] - [1830PSSCLI] - [INFO]: ssh to nfmt vm nsested ssh  [ ip  =>  151.98.30.92 ] [ CONNECTED ]
+[2024-03-23 00:31:09] - [1830PSSCLI] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:31:10] - [1830PSSCLI] - [INFO]: Getting NE version.. 
+[2024-03-23 00:31:10] - [1830PSSCLI] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:31:10] - [1830PSSCLI] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:31:11] - [1830PSSCLI] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:31:11] - [1830PSSCLI] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:31:11] - [1830PSSCLI] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:31:15] - [1830PSSCLI] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:31:15] - [1830PSSCLI] - [INFO]: executing :paging status disable
+[2024-03-23 00:31:16] - [1830PSSCLI] - [INFO]: paging disabled.
+[2024-03-23 00:31:16] - [1830PSSCLI] - [INFO]: executing :show xc *
+[2024-03-23 00:31:16] - [1830PSSCLI] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:31:16] - [1830PSSCLI] - [DEBUG]: Appending buffer show xc *
+
+                                                                       Width                   Admin Oper
+A-End         Z-End         FREQ      ID   OCH Trail                   (GHz)    Type           State State Dir
+---------------------------------------------------------------------------------------------------------------
+1/3/LINEIN    1/4/LINEOUT   9320.000  4    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9360.000  5    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9520.000  19   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9530.000  18   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9540.000  17   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9550.000  16   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9560.000  15   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9570.000  14   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+---------------------------------------------------------------------------------------------------------------
+8 entries
+---------------------------------------------------------------------------------------------------------------
+
+LRVMP-AAN5002-1# 
+[2024-03-23 00:31:18] - [1830PSSCLI] - [DEBUG]: buffer completed
+[2024-03-23 00:31:18] - [1830PSSCLI] - [INFO]: executing :mm
+[2024-03-23 00:31:19] - [1830PSSCLI] - [INFO]: executing :logout
+[2024-03-23 00:31:21] - [1830PSSCLI] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:31:22] - [1830PSSCLI] - [INFO]: Getting NE version.. 
+[2024-03-23 00:31:22] - [1830PSSCLI] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:31:22] - [1830PSSCLI] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:31:23] - [1830PSSCLI] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:31:23] - [1830PSSCLI] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:31:24] - [1830PSSCLI] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:31:28] - [1830PSSCLI] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:31:28] - [1830PSSCLI] - [INFO]: executing :paging status disable
+[2024-03-23 00:31:28] - [1830PSSCLI] - [INFO]: paging disabled.
+[2024-03-23 00:31:28] - [1830PSSCLI] - [INFO]: executing :show xc *
+[2024-03-23 00:31:28] - [1830PSSCLI] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:31:29] - [1830PSSCLI] - [DEBUG]: Appending buffer show xc *
+
+                                                                       Width                   Admin Oper
+A-End         Z-End         FREQ      ID   OCH Trail                   (GHz)    Type           State State Dir
+---------------------------------------------------------------------------------------------------------------
+1/3/LINEIN    1/4/LINEOUT   9320.000  4    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9360.000  5    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9520.000  19   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9530.000  18   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9540.000  17   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9550.000  16   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9560.000  15   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9570.000  14   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+---------------------------------------------------------------------------------------------------------------
+8 entries
+---------------------------------------------------------------------------------------------------------------
+
+LRVMP-AAN5002-1# 
+[2024-03-23 00:31:31] - [1830PSSCLI] - [DEBUG]: buffer completed
+[2024-03-23 00:31:31] - [1830PSSCLI] - [INFO]: executing :mm
+[2024-03-23 00:31:32] - [1830PSSCLI] - [INFO]: executing :logout
+[2024-03-23 00:31:33] - [1830PSSCLI] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:31:35] - [1830PSSCLI] - [INFO]: Getting NE version.. 
+[2024-03-23 00:31:35] - [1830PSSCLI] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:31:35] - [1830PSSCLI] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:31:35] - [1830PSSCLI] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:31:35] - [1830PSSCLI] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:31:36] - [1830PSSCLI] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:31:40] - [1830PSSCLI] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:31:40] - [1830PSSCLI] - [INFO]: executing :paging status disable
+[2024-03-23 00:31:40] - [1830PSSCLI] - [INFO]: paging disabled.
+[2024-03-23 00:31:40] - [1830PSSCLI] - [INFO]: executing :show xc *
+[2024-03-23 00:31:40] - [1830PSSCLI] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:31:41] - [1830PSSCLI] - [DEBUG]: Appending buffer show xc *
+
+                                                                       Width                   Admin Oper
+A-End         Z-End         FREQ      ID   OCH Trail                   (GHz)    Type           State State Dir
+---------------------------------------------------------------------------------------------------------------
+1/3/LINEIN    1/4/LINEOUT   9320.000  4    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9360.000  5    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9520.000  19   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9530.000  18   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9540.000  17   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9550.000  16   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9560.000  15   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9570.000  14   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+---------------------------------------------------------------------------------------------------------------
+8 entries
+---------------------------------------------------------------------------------------------------------------
+
+LRVMP-AAN5002-1# 
+[2024-03-23 00:31:43] - [1830PSSCLI] - [DEBUG]: buffer completed
+[2024-03-23 00:31:43] - [1830PSSCLI] - [INFO]: executing :mm
+[2024-03-23 00:31:44] - [1830PSSCLI] - [INFO]: executing :logout
+[2024-03-23 00:31:45] - [1830PSSCLI] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:31:47] - [1830PSSCLI] - [INFO]: Getting NE version.. 
+[2024-03-23 00:31:47] - [1830PSSCLI] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:31:47] - [1830PSSCLI] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:31:47] - [1830PSSCLI] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:31:47] - [1830PSSCLI] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:31:48] - [1830PSSCLI] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:31:52] - [1830PSSCLI] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:31:52] - [1830PSSCLI] - [INFO]: executing :paging status disable

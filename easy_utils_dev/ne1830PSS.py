@@ -17,14 +17,14 @@ class PSS1830 :
 
     def __init__(self , sim=False ) -> None:
         self.port = 22
-        self.logger = DEBUGGER('fw-checker')
+        self.logger = DEBUGGER('1830PSSCLI')
         self.connected = False
         self.client = paramiko.SSHClient()
         self.client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         self.channel = None
         self.nodeName = None
         self.prompt = None
-        self.TIMEOUT = 30
+        self.TIMEOUT = 1.5
         self.isjumpserver = False
         self.jumpserver = {}
         self.sim = sim
@@ -66,11 +66,12 @@ class PSS1830 :
             return self.jumpserver
         except Exception :
             self.logger.debug(f"""ssh to nfmt vm nsested ssh  [ ip  =>  {ip} ] [ FAILED ]  {traceback.format_exc()} """) 
-            self.logger.info(f"""ssh to nfmt vm nsested ssh  [ ip  =>  {ip} ] [ FAILED ]""")
+            self.logger.error(f"""ssh to nfmt vm nsested ssh  [ ip  =>  {ip} ] [ FAILED ]""")
             sys.exit(-1)
 
 
     def fixTcpSSH(self) :
+        return
         self.logger.info(f"""fixing tcp allow tcpforwarding .. """)
         stdin, stdout, stderr = self.jumpserver.exec_command("cat /etc/ssh/sshd_config | grep -i AllowTcpForwarding")
         result = stdout.read()
@@ -97,20 +98,20 @@ class PSS1830 :
         self.logger.debug(f"""Current [ modifications done ]  AllowTcpForwarding result  = {result}""") 
 
     def wrap_cli(self) :
-        for i in range(self.TIMEOUT) :
+        for i in range(10) :
             sleep(.5)
             new_data = self.channel.recv(2048).decode('utf-8')
             if ("Username") in str(new_data) : 
                 self.channel.sendall(self.cliUser + '\n')
                 break
-        for i in range(self.TIMEOUT) :
+        for i in range(10) :
             sleep(.5)
             new_data = self.channel.recv(2048).decode('utf-8')
             if ("password") in str(new_data).lower() : 
                 self.channel.sendall(self.cliPw + '\n')
                 break
         if self.requireAknow :
-            for i in range(self.TIMEOUT) :
+            for i in range(10) :
                 sleep(1)
                 new_data = self.channel.recv(2048).decode('utf-8')
                 if ("acknowledge") in str(new_data).lower() : 
@@ -119,7 +120,7 @@ class PSS1830 :
         return True
 
     def determine_prompt(self) :
-        for i in range(self.TIMEOUT) :
+        for i in range(30) :
             sleep(.5)
             new_data = self.channel.recv(4096).decode('utf-8')
             if "#" in new_data :
@@ -166,26 +167,20 @@ class PSS1830 :
 
     def connect(self , mode='cli' , neip=None , port=22  , user = 'admin', pw ='admin' , rootpw='ALu12#' ,  jumpserver = None ) :
         self.logger.info(f'Opening SSH  connection to NE {neip} mode={mode}')
-
         self.cliUser = user
         self.mode = mode
         self.cliPw = pw
-
         if self.sim == True :
             port = 22 
         elif self.sim == False :
             port = 5122
-
-
         # another method is to inject the jumpserver inside the connect itself.
         if jumpserver != None  and self.jumpServerInSameInstance == False :
             self.isjumpserver = True
             self.jumpserver = jumpserver
             self.nfmtip = jumpserver.nfmtip 
-
         if  self.isjumpserver == False :
             self.client.connect(neip , port , "root" , rootpw )
-
         elif self.isjumpserver :
             jump_transport = self.jumpserver.get_transport()
             src_addr = (self.nfmtip, 22 )
@@ -195,17 +190,15 @@ class PSS1830 :
             self.client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
             self.client.connect(neip , port , "root" , rootpw , sock=jump_channel)
             self.connected = True
-
         if mode == 'ssh' : 
             self.connected = True
             return self.client
-
         # getting the ne version.
         self.logger.info(f'Getting NE version.. ')
-        cli = "echo ${swVerInfoAscii}"
+        cli = "cat /pureNeApp/EC/swVerInfoAscii"
         self.logger.debug(f'Calling {cli}')
         result = self.ssh_execute( self.client , cli )
-        if len(result) < 3 :
+        if len(result) < 5 :
             raise Exception('PSS Release is not valid')
         elif '-' in result :
             self.pssRelease = float(result.partition('-')[2].partition('-')[0])
@@ -217,25 +210,17 @@ class PSS1830 :
                 self.requireAknow = False
         else :
             raise Exception('undefined PSS Release return output. check logs ')         
-        
-        
         # self.pssRelease
-
         # if the mode is cli
         self.channel = self.client.invoke_shell()
         self.channel.settimeout(self.TIMEOUT)
-
         # send the su command
         cmd = 'su - cli\n'
         self.logger.debug(f'Execuing {cmd} to switch from root to cli ..')
         self.channel.sendall(cmd)
-
         self.wrap_cli()
-
         self.determine_prompt()
-
         self.connected = True
-
         return self.client
         
 
@@ -261,68 +246,48 @@ class PSS1830 :
         channels = self.get_xcs()
         header = ['NE', 'shelf', 'slot', 'port' , 'powerRx' , "powerTx" , "channel" , "prefec"  ,"postFec" , "shape" , "phase" , "trackMode"]
         csvFpath = f"channels_report_{self.host}_{self.getTime()}.csv"
-        
         if exportCsv :        
             csvFile = open(csvFpath, 'w', encoding='UTF8' , newline='')
             csvFile = csv.writer(csvFile)
             csvFile.writerow(header)
-     
         for channel in channels :
             otPort = None
-            
             if not "LINE" in channel['aEnd'].upper() : otPort = channel['aEnd']
             if not "LINE" in channel['zEnd'].upper() : otPort = channel['zEnd']
-
             file = self.cli_execute(f"show interface {otPort} detail").splitlines()
-
             for line in file :
                 breakIt = False 
                 try :
                     nodeName = self.prompt.replace("#" , "")
-
                     if "Shelf:" in line :
                         details = line.split(": ")
                         shelf = details[1].replace(' Slot' , "")
                         slot = details[2].replace(' Port' , "")
                         port = details[3].split(' -')[0]
-                        
-
                     if "Received Power" in line :
                         powerRx = line.split(':')[1].split(" ")[1]
-
-
                     if "Transmitted Power" in line :
                         powerTx = line.split(':')[1].split(" ")[1]
-
                     if "Channel Tx   " in line :
                         channel = line.split(':')[1].split(" ")[1].replace('\n' , '')
-
                     if "pre" in line.lower() and 'fec' in line.lower() :
                         prefec = line.split(':')[1].split(" ")[1].replace('\n' , '')
-
                     if "post" in line.lower() and 'fec' in line.lower() :
                         postFec = line.split(':')[1].split(" ")[1].replace('\n' , '')
-
                     if "Txshape" in line :
                         shape = line.split(':')[1].split(" ")[1].replace('\n' , '')
-
                     if "Phase encoding Mode" in line :
                         phase = line.split(':')[1].split(" ")[1].replace('\n' , '')
-
                     if "TrackPolar" in line or "Track Polar" in line :
                         trackMode = line.split(':')[1].split(" ")[1].replace('\n' , '')
                         breakIt = True
-
                     if breakIt and  exportCsv :
                         output = f"{nodeName} => [ {shelf} / {slot} / {port}  ] {channel} => TX : {powerTx} ,  RX : {powerRx} prefec => {prefec}  "
                         data = [nodeName , shelf , slot , port , powerRx , powerTx , channel , prefec  ,postFec , shape , phase , trackMode]
                         csvFile.writerow(data)
                         # print(output)
-
                 except Exception as error:
-                    print(error) 
-                    pass
-
+                    self.logger.error(f'error in channels profile {error}')
         self.logger.info('Generating Channels Report Terminated. ')
             
             
@@ -332,11 +297,13 @@ class PSS1830 :
         self.logger.info('executing :'+command)
         if wait :
             result = self.wait_result(command)
-            # print(result )
             return result
         else :
             sleep(.75)
-            self.channel.recv(99999999)
+            try :
+                self.channel.recv(99999999)
+            except :
+                pass
 
     
     def config_database(self , ip , user, password , protocol , path , backupname="BACKUP") :
@@ -359,47 +326,30 @@ class PSS1830 :
         self.cli_execute('mm')
         
         
-    def wait_result(self , command) :
-        self.logger.debug(f"""WAIT RESULT : command = {command}""")
-        try :
-            data = ''
-            start = False
-            i = 0
-            while True:
-                sleep(.5)
-                new_data = self.channel.recv(9999*1000).decode('utf-8')
-                linesNumber = len(new_data.split('\n'))
-                self.logger.debug(f"""WAIT RESULT : new_data = {new_data}""")
-                if new_data :
-                    i = 0
-                    # print(new_data)
-                    data += new_data      
-                    if self.prompt in data :   
-                        data2 = data.splitlines()   
-                        return_data = ''
-                        for line in data2 : 
-                            if command in line : 
-                                start = True
-                            elif not command in line and start == True  and not self.prompt in line and line != '' :
-                                # print(line)
-                                return_data += line +'\n'
-                            if line.startswith(self.prompt) and command not in line :
-                                # print(f"""
-                                # ------------####-----------------
-                                # {return_data}
-                                # ----------------####-------------""")
-                                self.logger.debug(f"""WAIT RESULT : return_data = {return_data}""")
-                                return return_data
-                else  : 
-                    i += 1
-
-                    if i >= self.TIMEOUT*2 :
-                        self.logger.info(f"""TIMEOUT FOR WAIT_RESULT : {command}""")
-                        
-                        
+    def wait_result(self , command , expect=None ) :
         
-        except :
-            print("TIMEOUT!")
+        if not expect :
+            expect= self.prompt
+        
+        self.logger.debug(f"""Wait result syntax : command = {command}""")
+        buffer = ''
+        while True:
+            sleep(.5)
+            try :
+                new_data = self.channel.recv(4194304).decode('utf-8')
+                buffer += new_data
+                self.logger.debug(f"""Appending buffer {new_data}""")
+            except :
+                self.logger.debug(f"""buffer completed""")
+                break
+        nbuffer = ''
+        for index , line in enumerate(buffer.splitlines()) :
+            if command in line and self.prompt in line : 
+                continue
+            nbuffer += line + '\n'
+
+        return nbuffer
+
     
     def get_allcards(self) : 
         self.logger.info("Getting all cards inventory .. ")
@@ -441,6 +391,7 @@ class PSS1830 :
         xcs = xcs.splitlines()
         xcsList = []
         for key , line in enumerate(xcs) : 
+            # print(f">>> {line}")
             # print(line)
             if "------------" in line : continue
             if "A-End" in line or 'OCH Trail' in line or "Admin Oper" in line or "entries" in line or " "*20 in line : continue
@@ -448,19 +399,23 @@ class PSS1830 :
             details = line.split(' ')
             
             details = [ i for i in details if i != "" ]
-            if len(details) == 0 : continue
+            if len(details) == 0 : 
+                continue
             
-            aEnd = details[0]
-            zEnd = details[1]
-            channel = details[2]
-            connectionId = details[3]
-            label = details[4]
-            width = details[5]
-            type = details[6]
-            adminState = details[7]
-            oper = details[8]
-            dir = details[9]
-            
+            try :
+                aEnd = details[0]
+                zEnd = details[1]
+                channel = details[2]
+                connectionId = details[3]
+                label = details[4]
+                width = details[5]
+                type = details[6]
+                adminState = details[7]
+                oper = details[8]
+                dir = details[9]
+            except :
+                continue
+                
             tmp = {'aEnd' : aEnd , 'zEnd' : zEnd , 'channel' : channel , "id" : connectionId ,
                    "label" : label , 'width' : width , "type" : type , "admin" : adminState , 
                    "operation" : oper , 'dir' : dir

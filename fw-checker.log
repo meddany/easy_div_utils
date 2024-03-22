@@ -1,0 +1,1004 @@
+[2024-03-23 00:04:14] - [fw-checker] - [INFO]: ssh to nfmt vm nsested ssh  [ ip  =>  151.98.30.92 ] ..
+[2024-03-23 00:04:16] - [fw-checker] - [INFO]: ssh to nfmt vm nsested ssh  [ ip  =>  151.98.30.92 ] [ CONNECTED ]
+[2024-03-23 00:04:17] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:05:08] - [fw-checker] - [INFO]: ssh to nfmt vm nsested ssh  [ ip  =>  151.98.30.92 ] ..
+[2024-03-23 00:05:09] - [fw-checker] - [INFO]: ssh to nfmt vm nsested ssh  [ ip  =>  151.98.30.92 ] [ CONNECTED ]
+[2024-03-23 00:05:10] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:05:12] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:05:12] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:05:12] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:05:12] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:05:12] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:05:13] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:06:33] - [fw-checker] - [INFO]: ssh to nfmt vm nsested ssh  [ ip  =>  151.98.30.92 ] ..
+[2024-03-23 00:06:35] - [fw-checker] - [INFO]: ssh to nfmt vm nsested ssh  [ ip  =>  151.98.30.92 ] [ CONNECTED ]
+[2024-03-23 00:06:36] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:06:38] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:06:38] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:06:38] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:06:38] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:06:38] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:06:39] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:07:39] - [fw-checker] - [INFO]: ssh to nfmt vm nsested ssh  [ ip  =>  151.98.30.92 ] ..
+[2024-03-23 00:07:41] - [fw-checker] - [INFO]: ssh to nfmt vm nsested ssh  [ ip  =>  151.98.30.92 ] [ CONNECTED ]
+[2024-03-23 00:07:42] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:07:44] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:07:44] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:07:44] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:07:44] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:07:44] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:07:45] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:08:09] - [fw-checker] - [INFO]: ssh to nfmt vm nsested ssh  [ ip  =>  151.98.30.92 ] ..
+[2024-03-23 00:08:11] - [fw-checker] - [INFO]: ssh to nfmt vm nsested ssh  [ ip  =>  151.98.30.92 ] [ CONNECTED ]
+[2024-03-23 00:08:12] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:08:13] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:08:13] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:08:13] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:08:14] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:08:14] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:08:14] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:08:18] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:08:18] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:08:19] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:08:19] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:08:19] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:08:19] - [fw-checker] - [DEBUG]: WAIT RESULT : new_data = show xc *
+
+                                                                       Width                   Admin Oper
+A-End         Z-End         FREQ      ID   OCH Trail                   (GHz)    Type           State State Dir
+---------------------------------------------------------------------------------------------------------------
+1/3/LINEIN    1/4/LINEOUT   9320.000  4    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9360.000  5    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9520.000  19   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9530.000  18   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9540.000  17   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9550.000  16   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9560.000  15   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9570.000  14   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+---------------------------------------------------------------------------------------------------------------
+8 entries
+---------------------------------------------------------------------------------------------------------------
+
+LRVMP-AAN5002-1# 
+[2024-03-23 00:11:50] - [fw-checker] - [INFO]: ssh to nfmt vm nsested ssh  [ ip  =>  151.98.30.92 ] ..
+[2024-03-23 00:11:51] - [fw-checker] - [INFO]: ssh to nfmt vm nsested ssh  [ ip  =>  151.98.30.92 ] [ CONNECTED ]
+[2024-03-23 00:11:52] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:11:54] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:11:54] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:11:54] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:11:54] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:11:54] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:11:55] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:11:59] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:11:59] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:12:00] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:12:00] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:12:00] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:13:50] - [fw-checker] - [INFO]: ssh to nfmt vm nsested ssh  [ ip  =>  151.98.30.92 ] ..
+[2024-03-23 00:13:52] - [fw-checker] - [INFO]: ssh to nfmt vm nsested ssh  [ ip  =>  151.98.30.92 ] [ CONNECTED ]
+[2024-03-23 00:13:53] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:13:54] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:13:54] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:13:54] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:13:55] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:13:55] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:13:56] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:13:59] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:13:59] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:14:00] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:14:00] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:14:00] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:14:26] - [fw-checker] - [INFO]: ssh to nfmt vm nsested ssh  [ ip  =>  151.98.30.92 ] ..
+[2024-03-23 00:14:28] - [fw-checker] - [INFO]: ssh to nfmt vm nsested ssh  [ ip  =>  151.98.30.92 ] [ CONNECTED ]
+[2024-03-23 00:14:29] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:14:31] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:14:31] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:14:31] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:14:31] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:14:31] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:14:32] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:14:36] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:14:36] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:14:37] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:14:37] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:14:37] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:16:30] - [fw-checker] - [INFO]: ssh to nfmt vm nsested ssh  [ ip  =>  151.98.30.92 ] ..
+[2024-03-23 00:16:32] - [fw-checker] - [INFO]: ssh to nfmt vm nsested ssh  [ ip  =>  151.98.30.92 ] [ CONNECTED ]
+[2024-03-23 00:16:33] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:16:34] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:16:34] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:16:34] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:16:34] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:16:34] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:16:35] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:16:39] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:16:39] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:16:40] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:16:40] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:16:40] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:18:16] - [fw-checker] - [INFO]: ssh to nfmt vm nsested ssh  [ ip  =>  151.98.30.92 ] ..
+[2024-03-23 00:18:17] - [fw-checker] - [INFO]: ssh to nfmt vm nsested ssh  [ ip  =>  151.98.30.92 ] [ CONNECTED ]
+[2024-03-23 00:18:18] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:18:20] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:18:20] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:18:20] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:18:20] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:18:20] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:18:21] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:18:25] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:18:25] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:18:26] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:18:26] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:18:26] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:18:29] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:18:31] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:18:31] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:18:31] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:18:31] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:18:31] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:18:32] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:18:36] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:18:36] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:18:36] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:18:36] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:18:36] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:18:48] - [fw-checker] - [INFO]: ssh to nfmt vm nsested ssh  [ ip  =>  151.98.30.92 ] ..
+[2024-03-23 00:18:50] - [fw-checker] - [INFO]: ssh to nfmt vm nsested ssh  [ ip  =>  151.98.30.92 ] [ CONNECTED ]
+[2024-03-23 00:18:51] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:18:52] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:18:52] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:18:52] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:18:53] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:18:53] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:18:54] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:18:57] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:18:57] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:18:58] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:18:58] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:18:58] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:19:02] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:19:03] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:19:03] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:19:03] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:19:03] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:19:03] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:19:04] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:19:08] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:19:08] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:19:09] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:19:09] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:19:09] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:19:12] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:19:14] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:19:14] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:19:14] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:19:14] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:19:14] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:19:15] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:19:19] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:19:19] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:19:19] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:19:19] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:19:19] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:19:23] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:19:24] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:19:24] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:19:24] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:19:25] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:19:25] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:19:25] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:19:29] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:19:29] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:19:30] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:19:30] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:19:30] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:19:34] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:19:35] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:19:35] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:19:35] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:19:35] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:19:35] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:19:36] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:19:40] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:19:40] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:19:41] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:19:41] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:19:41] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:21:37] - [fw-checker] - [INFO]: ssh to nfmt vm nsested ssh  [ ip  =>  151.98.30.92 ] ..
+[2024-03-23 00:21:39] - [fw-checker] - [INFO]: ssh to nfmt vm nsested ssh  [ ip  =>  151.98.30.92 ] [ CONNECTED ]
+[2024-03-23 00:21:40] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:21:42] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:21:42] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:21:42] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:21:42] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:21:42] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:21:43] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:21:47] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:21:47] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:21:47] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:21:47] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:21:47] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:21:50] - [fw-checker] - [INFO]: executing :mm
+[2024-03-23 00:21:51] - [fw-checker] - [INFO]: executing :logout
+[2024-03-23 00:21:52] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:21:54] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:21:54] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:21:54] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:21:54] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:21:54] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:21:55] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:21:59] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:21:59] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:22:00] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:22:00] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:22:00] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:22:02] - [fw-checker] - [INFO]: executing :mm
+[2024-03-23 00:22:03] - [fw-checker] - [INFO]: executing :logout
+[2024-03-23 00:22:05] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:22:06] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:22:06] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:22:06] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:22:06] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:22:06] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:22:07] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:22:11] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:22:11] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:22:12] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:22:12] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:22:12] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:22:14] - [fw-checker] - [INFO]: executing :mm
+[2024-03-23 00:22:15] - [fw-checker] - [INFO]: executing :logout
+[2024-03-23 00:22:17] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:22:18] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:22:18] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:22:18] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:22:18] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:22:18] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:22:19] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:22:23] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:22:23] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:22:24] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:22:24] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:22:24] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:22:26] - [fw-checker] - [INFO]: executing :mm
+[2024-03-23 00:22:27] - [fw-checker] - [INFO]: executing :logout
+[2024-03-23 00:22:29] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:22:30] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:22:30] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:22:30] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:22:31] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:22:31] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:22:32] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:22:35] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:22:35] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:22:36] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:22:36] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:22:36] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:22:38] - [fw-checker] - [INFO]: executing :mm
+[2024-03-23 00:22:39] - [fw-checker] - [INFO]: executing :logout
+[2024-03-23 00:22:41] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:22:42] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:22:42] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:22:42] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:22:43] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:22:43] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:22:43] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:22:47] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:22:47] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:22:48] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:22:48] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:22:48] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:22:51] - [fw-checker] - [INFO]: executing :mm
+[2024-03-23 00:22:51] - [fw-checker] - [INFO]: executing :logout
+[2024-03-23 00:22:53] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:22:54] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:22:54] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:22:54] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:22:55] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:22:55] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:22:56] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:22:59] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:22:59] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:23:00] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:23:00] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:23:00] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:23:03] - [fw-checker] - [INFO]: executing :mm
+[2024-03-23 00:23:03] - [fw-checker] - [INFO]: executing :logout
+[2024-03-23 00:23:05] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:23:07] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:23:07] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:23:07] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:23:07] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:23:07] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:23:08] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:23:12] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:23:12] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:23:12] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:23:12] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:23:12] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:23:15] - [fw-checker] - [INFO]: executing :mm
+[2024-03-23 00:23:16] - [fw-checker] - [INFO]: executing :logout
+[2024-03-23 00:23:17] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:23:19] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:23:19] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:23:19] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:23:19] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:23:19] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:23:20] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:23:24] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:23:24] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:23:25] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:23:25] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:23:25] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:23:27] - [fw-checker] - [INFO]: executing :mm
+[2024-03-23 00:23:28] - [fw-checker] - [INFO]: executing :logout
+[2024-03-23 00:23:30] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:23:31] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:23:31] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:23:31] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:23:32] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:23:32] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:23:32] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:23:36] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:23:36] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:23:37] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:23:37] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:23:37] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:23:40] - [fw-checker] - [INFO]: executing :mm
+[2024-03-23 00:23:40] - [fw-checker] - [INFO]: executing :logout
+[2024-03-23 00:25:59] - [fw-checker] - [INFO]: ssh to nfmt vm nsested ssh  [ ip  =>  151.98.30.92 ] ..
+[2024-03-23 00:26:01] - [fw-checker] - [INFO]: ssh to nfmt vm nsested ssh  [ ip  =>  151.98.30.92 ] [ CONNECTED ]
+[2024-03-23 00:26:02] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:26:03] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:26:03] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:26:03] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:26:04] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:26:04] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:26:05] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:26:09] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:26:09] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:26:09] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:26:09] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:26:09] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:26:10] - [fw-checker] - [DEBUG]: Appending buffer show xc *
+
+                                                                       Width                   Admin Oper
+A-End         Z-End         FREQ      ID   OCH Trail                   (GHz)    Type           State State Dir
+---------------------------------------------------------------------------------------------------------------
+1/3/LINEIN    1/4/LINEOUT   9320.000  4    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9360.000  5    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9520.000  19   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9530.000  18   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9540.000  17   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9550.000  16   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9560.000  15   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9570.000  14   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+---------------------------------------------------------------------------------------------------------------
+8 entries
+---------------------------------------------------------------------------------------------------------------
+
+LRVMP-AAN5002-1# 
+[2024-03-23 00:26:18] - [fw-checker] - [DEBUG]: Appending buffer show xc *
+
+                                                                       Width                   Admin Oper
+A-End         Z-End         FREQ      ID   OCH Trail                   (GHz)    Type           State State Dir
+---------------------------------------------------------------------------------------------------------------
+1/3/LINEIN    1/4/LINEOUT   9320.000  4    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9360.000  5    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9520.000  19   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9530.000  18   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9540.000  17   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9550.000  16   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9560.000  15   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9570.000  14   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+---------------------------------------------------------------------------------------------------------------
+8 entries
+---------------------------------------------------------------------------------------------------------------
+
+LRVMP-AAN5002-1# 
+[2024-03-23 00:26:26] - [fw-checker] - [DEBUG]: Appending buffer show xc *
+
+                                                                       Width                   Admin Oper
+A-End         Z-End         FREQ      ID   OCH Trail                   (GHz)    Type           State State Dir
+---------------------------------------------------------------------------------------------------------------
+1/3/LINEIN    1/4/LINEOUT   9320.000  4    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9360.000  5    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9520.000  19   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9530.000  18   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9540.000  17   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9550.000  16   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9560.000  15   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9570.000  14   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+---------------------------------------------------------------------------------------------------------------
+8 entries
+---------------------------------------------------------------------------------------------------------------
+
+LRVMP-AAN5002-1# 
+[2024-03-23 00:26:31] - [fw-checker] - [DEBUG]: buffer completed
+[2024-03-23 00:26:31] - [fw-checker] - [INFO]: executing :mm
+[2024-03-23 00:28:42] - [fw-checker] - [INFO]: ssh to nfmt vm nsested ssh  [ ip  =>  151.98.30.92 ] ..
+[2024-03-23 00:28:44] - [fw-checker] - [INFO]: ssh to nfmt vm nsested ssh  [ ip  =>  151.98.30.92 ] [ CONNECTED ]
+[2024-03-23 00:28:45] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:28:46] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:28:46] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:28:46] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:28:47] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:28:47] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:28:47] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:28:51] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:28:51] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:28:52] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:28:52] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:28:52] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:28:53] - [fw-checker] - [DEBUG]: Appending buffer show xc *
+
+                                                                       Width                   Admin Oper
+A-End         Z-End         FREQ      ID   OCH Trail                   (GHz)    Type           State State Dir
+---------------------------------------------------------------------------------------------------------------
+1/3/LINEIN    1/4/LINEOUT   9320.000  4    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9360.000  5    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9520.000  19   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9530.000  18   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9540.000  17   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9550.000  16   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9560.000  15   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9570.000  14   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+---------------------------------------------------------------------------------------------------------------
+8 entries
+---------------------------------------------------------------------------------------------------------------
+
+LRVMP-AAN5002-1# 
+[2024-03-23 00:28:55] - [fw-checker] - [DEBUG]: buffer completed
+[2024-03-23 00:28:55] - [fw-checker] - [INFO]: executing :mm
+[2024-03-23 00:28:55] - [fw-checker] - [INFO]: executing :logout
+[2024-03-23 00:28:57] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:28:58] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:28:58] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:28:58] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:28:59] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:28:59] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:29:00] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:29:03] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:29:03] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:29:04] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:29:04] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:29:04] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:29:05] - [fw-checker] - [DEBUG]: Appending buffer show xc *
+
+                                                                       Width                   Admin Oper
+A-End         Z-End         FREQ      ID   OCH Trail                   (GHz)    Type           State State Dir
+---------------------------------------------------------------------------------------------------------------
+1/3/LINEIN    1/4/LINEOUT   9320.000  4    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9360.000  5    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9520.000  19   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9530.000  18   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9540.000  17   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9550.000  16   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9560.000  15   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9570.000  14   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+---------------------------------------------------------------------------------------------------------------
+8 entries
+---------------------------------------------------------------------------------------------------------------
+
+LRVMP-AAN5002-1# 
+[2024-03-23 00:29:07] - [fw-checker] - [DEBUG]: buffer completed
+[2024-03-23 00:29:07] - [fw-checker] - [INFO]: executing :mm
+[2024-03-23 00:29:07] - [fw-checker] - [INFO]: executing :logout
+[2024-03-23 00:29:09] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:29:10] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:29:11] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:29:11] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:29:11] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:29:11] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:29:12] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:29:15] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:29:16] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:29:16] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:29:16] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:29:16] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:29:17] - [fw-checker] - [DEBUG]: Appending buffer show xc *
+
+                                                                       Width                   Admin Oper
+A-End         Z-End         FREQ      ID   OCH Trail                   (GHz)    Type           State State Dir
+---------------------------------------------------------------------------------------------------------------
+1/3/LINEIN    1/4/LINEOUT   9320.000  4    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9360.000  5    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9520.000  19   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9530.000  18   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9540.000  17   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9550.000  16   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9560.000  15   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9570.000  14   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+---------------------------------------------------------------------------------------------------------------
+8 entries
+---------------------------------------------------------------------------------------------------------------
+
+LRVMP-AAN5002-1# 
+[2024-03-23 00:29:19] - [fw-checker] - [DEBUG]: buffer completed
+[2024-03-23 00:29:19] - [fw-checker] - [INFO]: executing :mm
+[2024-03-23 00:29:20] - [fw-checker] - [INFO]: executing :logout
+[2024-03-23 00:29:21] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:29:23] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:29:23] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:29:23] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:29:23] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:29:23] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:29:24] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:29:28] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:29:28] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:29:28] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:29:28] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:29:28] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:29:29] - [fw-checker] - [DEBUG]: Appending buffer show xc *
+
+                                                                       Width                   Admin Oper
+A-End         Z-End         FREQ      ID   OCH Trail                   (GHz)    Type           State State Dir
+---------------------------------------------------------------------------------------------------------------
+1/3/LINEIN    1/4/LINEOUT   9320.000  4    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9360.000  5    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9520.000  19   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9530.000  18   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9540.000  17   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9550.000  16   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9560.000  15   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9570.000  14   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+
+[2024-03-23 00:29:29] - [fw-checker] - [DEBUG]: Appending buffer ---------------------------------------------------------------------------------------------------------------
+8 entries
+---------------------------------------------------------------------------------------------------------------
+
+LRVMP-AAN5002-1# 
+[2024-03-23 00:29:31] - [fw-checker] - [DEBUG]: buffer completed
+[2024-03-23 00:29:32] - [fw-checker] - [INFO]: executing :mm
+[2024-03-23 00:29:32] - [fw-checker] - [INFO]: executing :logout
+[2024-03-23 00:29:34] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:29:35] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:29:35] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:29:35] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:29:36] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:29:36] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:29:37] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:29:40] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:29:40] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:29:41] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:29:41] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:29:41] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:29:42] - [fw-checker] - [DEBUG]: Appending buffer show xc *
+[2024-03-23 00:29:42] - [fw-checker] - [DEBUG]: Appending buffer 
+
+                                                                       Width                   Admin Oper
+A-End         Z-End         FREQ      ID   OCH Trail                   (GHz)    Type           State State Dir
+---------------------------------------------------------------------------------------------------------------
+1/3/LINEIN    1/4/LINEOUT   9320.000  4    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9360.000  5    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9520.000  19   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9530.000  18   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9540.000  17   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9550.000  16   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9560.000  15   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9570.000  14   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+---------------------------------------------------------------------------------------------------------------
+8 entries
+---------------------------------------------------------------------------------------------------------------
+
+LRVMP-AAN5002-1# 
+[2024-03-23 00:29:44] - [fw-checker] - [DEBUG]: buffer completed
+[2024-03-23 00:29:44] - [fw-checker] - [INFO]: executing :mm
+[2024-03-23 00:29:45] - [fw-checker] - [INFO]: executing :logout
+[2024-03-23 00:29:47] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:29:48] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:29:48] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:29:48] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:29:49] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:29:49] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:29:49] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:29:53] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:29:53] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:29:54] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:29:54] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:29:54] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:29:55] - [fw-checker] - [DEBUG]: Appending buffer show xc *
+
+                                                                       Width                   Admin Oper
+A-End         Z-End         FREQ      ID   OCH Trail                   (GHz)    Type           State State Dir
+---------------------------------------------------------------------------------------------------------------
+1/3/LINEIN    1/4/LINEOUT   9320.000  4    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9360.000  5    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9520.000  19   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9530.000  18   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9540.000  17   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9550.000  16   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9560.000  15   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9570.000  14   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+---------------------------------------------------------------------------------------------------------------
+8 entries
+---------------------------------------------------------------------------------------------------------------
+
+LRVMP-AAN5002-1# 
+[2024-03-23 00:29:57] - [fw-checker] - [DEBUG]: buffer completed
+[2024-03-23 00:29:57] - [fw-checker] - [INFO]: executing :mm
+[2024-03-23 00:29:57] - [fw-checker] - [INFO]: executing :logout
+[2024-03-23 00:29:59] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:30:00] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:30:00] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:30:00] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:30:01] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:30:01] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:30:01] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:30:05] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:30:05] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:30:06] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:30:06] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:30:06] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:30:07] - [fw-checker] - [DEBUG]: Appending buffer show xc *
+
+                                                                       Width                   Admin Oper
+A-End         Z-End         FREQ      ID   OCH Trail                   (GHz)    Type           State State Dir
+---------------------------------------------------------------------------------------------------------------
+1/3/LINEIN    1/4/LINEOUT   9320.000  4    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9360.000  5    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9520.000  19   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9530.000  18   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9540.000  17   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9550.000  16   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9560.000  15   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9570.000  14   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+---------------------------------------------------------------------------------------------------------------
+8 entries
+---------------------------------------------------------------------------------------------------------------
+
+LRVMP-AAN5002-1# 
+[2024-03-23 00:30:09] - [fw-checker] - [DEBUG]: buffer completed
+[2024-03-23 00:30:09] - [fw-checker] - [INFO]: executing :mm
+[2024-03-23 00:30:09] - [fw-checker] - [INFO]: executing :logout
+[2024-03-23 00:30:11] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:30:13] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:30:13] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:30:13] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:30:13] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:30:13] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:30:14] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:30:18] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:30:18] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:30:18] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:30:18] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:30:18] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:30:19] - [fw-checker] - [DEBUG]: Appending buffer show xc *
+
+                                                                       Width                   Admin Oper
+A-End         Z-End         FREQ      ID   OCH Trail                   (GHz)    Type           State State Dir
+---------------------------------------------------------------------------------------------------------------
+1/3/LINEIN    1/4/LINEOUT   9320.000  4    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9360.000  5    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9520.000  19   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9530.000  18   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9540.000  17   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9550.000  16   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9560.000  15   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9570.000  14   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+---------------------------------------------------------------------------------------------------------------
+8 entries
+---------------------------------------------------------------------------------------------------------------
+
+LRVMP-AAN5002-1# 
+[2024-03-23 00:30:21] - [fw-checker] - [DEBUG]: buffer completed
+[2024-03-23 00:30:21] - [fw-checker] - [INFO]: executing :mm
+[2024-03-23 00:30:22] - [fw-checker] - [INFO]: executing :logout
+[2024-03-23 00:30:23] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:30:25] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:30:25] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:30:25] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:30:25] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:30:25] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:30:26] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:30:30] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:30:30] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:30:30] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:30:30] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:30:30] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:30:31] - [fw-checker] - [DEBUG]: Appending buffer show xc *
+
+                                                                       Width                   Admin Oper
+A-End         Z-End         FREQ      ID   OCH Trail                   (GHz)    Type           State State Dir
+---------------------------------------------------------------------------------------------------------------
+1/3/LINEIN    1/4/LINEOUT   9320.000  4    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9360.000  5    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9520.000  19   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9530.000  18   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9540.000  17   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9550.000  16   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9560.000  15   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9570.000  14   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+---------------------------------------------------------------------------------------------------------------
+8 entries
+---------------------------------------------------------------------------------------------------------------
+
+LRVMP-AAN5002-1# 
+[2024-03-23 00:30:33] - [fw-checker] - [DEBUG]: buffer completed
+[2024-03-23 00:30:33] - [fw-checker] - [INFO]: executing :mm
+[2024-03-23 00:30:34] - [fw-checker] - [INFO]: executing :logout
+[2024-03-23 00:30:36] - [fw-checker] - [INFO]: Opening SSH  connection to NE 10.198.34.34 mode=cli
+[2024-03-23 00:30:37] - [fw-checker] - [INFO]: Getting NE version.. 
+[2024-03-23 00:30:37] - [fw-checker] - [DEBUG]: Calling cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:30:37] - [fw-checker] - [INFO]: executing cat /pureNeApp/EC/swVerInfoAscii
+[2024-03-23 00:30:37] - [fw-checker] - [INFO]:  
+                =========================
+                +command = 'cat /pureNeApp/EC/swVerInfoAscii'
+                -stdout = 1830PSSECX-14.0-9
+                -stderr = 
+                =========================
+                
+[2024-03-23 00:30:37] - [fw-checker] - [DEBUG]: switching to require aknow mode
+[2024-03-23 00:30:38] - [fw-checker] - [DEBUG]: Execuing su - cli
+ to switch from root to cli ..
+[2024-03-23 00:30:42] - [fw-checker] - [DEBUG]: prompt detected => LRVMP-AAN5002-1# 
+[2024-03-23 00:30:42] - [fw-checker] - [INFO]: executing :paging status disable
+[2024-03-23 00:30:43] - [fw-checker] - [INFO]: paging disabled.
+[2024-03-23 00:30:43] - [fw-checker] - [INFO]: executing :show xc *
+[2024-03-23 00:30:43] - [fw-checker] - [DEBUG]: Wait result syntax : command = show xc *
+[2024-03-23 00:30:43] - [fw-checker] - [DEBUG]: Appending buffer show xc *
+
+                                                                       Width                   Admin Oper
+A-End         Z-End         FREQ      ID   OCH Trail                   (GHz)    Type           State State Dir
+---------------------------------------------------------------------------------------------------------------
+1/3/LINEIN    1/4/LINEOUT   9320.000  4    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9360.000  5    100G_OPS_KHALIFA-CITY_130~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9520.000  19   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9530.000  18   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9540.000  17   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9550.000  16   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9560.000  15   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+1/3/LINEIN    1/4/LINEOUT   9570.000  14   100G_OPS_KHALIFA-CITY_S13~  50.0     Auto           Up    Down  Bi
+---------------------------------------------------------------------------------------------------------------
+8 entries
+---------------------------------------------------------------------------------------------------------------
+
+LRVMP-AAN5002-1# 
+[2024-03-23 00:30:45] - [fw-checker] - [DEBUG]: buffer completed
+[2024-03-23 00:30:45] - [fw-checker] - [INFO]: executing :mm
+[2024-03-23 00:30:46] - [fw-checker] - [INFO]: executing :logout

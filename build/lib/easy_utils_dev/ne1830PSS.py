@@ -17,14 +17,14 @@ class PSS1830 :
 
     def __init__(self , sim=False ) -> None:
         self.port = 22
-        self.logger = DEBUGGER('fw-checker')
+        self.logger = DEBUGGER('1830PSSCLI')
         self.connected = False
         self.client = paramiko.SSHClient()
         self.client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         self.channel = None
         self.nodeName = None
         self.prompt = None
-        self.TIMEOUT = 30
+        self.TIMEOUT = 1.5
         self.isjumpserver = False
         self.jumpserver = {}
         self.sim = sim
@@ -71,6 +71,7 @@ class PSS1830 :
 
 
     def fixTcpSSH(self) :
+        return
         self.logger.info(f"""fixing tcp allow tcpforwarding .. """)
         stdin, stdout, stderr = self.jumpserver.exec_command("cat /etc/ssh/sshd_config | grep -i AllowTcpForwarding")
         result = stdout.read()
@@ -97,20 +98,20 @@ class PSS1830 :
         self.logger.debug(f"""Current [ modifications done ]  AllowTcpForwarding result  = {result}""") 
 
     def wrap_cli(self) :
-        for i in range(self.TIMEOUT) :
+        for i in range(10) :
             sleep(.5)
             new_data = self.channel.recv(2048).decode('utf-8')
             if ("Username") in str(new_data) : 
                 self.channel.sendall(self.cliUser + '\n')
                 break
-        for i in range(self.TIMEOUT) :
+        for i in range(10) :
             sleep(.5)
             new_data = self.channel.recv(2048).decode('utf-8')
             if ("password") in str(new_data).lower() : 
                 self.channel.sendall(self.cliPw + '\n')
                 break
         if self.requireAknow :
-            for i in range(self.TIMEOUT) :
+            for i in range(10) :
                 sleep(1)
                 new_data = self.channel.recv(2048).decode('utf-8')
                 if ("acknowledge") in str(new_data).lower() : 
@@ -119,7 +120,7 @@ class PSS1830 :
         return True
 
     def determine_prompt(self) :
-        for i in range(self.TIMEOUT) :
+        for i in range(30) :
             sleep(.5)
             new_data = self.channel.recv(4096).decode('utf-8')
             if "#" in new_data :
@@ -202,10 +203,10 @@ class PSS1830 :
 
         # getting the ne version.
         self.logger.info(f'Getting NE version.. ')
-        cli = "echo ${swVerInfoAscii}"
+        cli = "cat /pureNeApp/EC/swVerInfoAscii"
         self.logger.debug(f'Calling {cli}')
         result = self.ssh_execute( self.client , cli )
-        if len(result) < 3 :
+        if len(result) < 5 :
             raise Exception('PSS Release is not valid')
         elif '-' in result :
             self.pssRelease = float(result.partition('-')[2].partition('-')[0])
@@ -332,7 +333,6 @@ class PSS1830 :
         self.logger.info('executing :'+command)
         if wait :
             result = self.wait_result(command)
-            # print(result )
             return result
         else :
             sleep(.75)
@@ -359,47 +359,30 @@ class PSS1830 :
         self.cli_execute('mm')
         
         
-    def wait_result(self , command) :
-        self.logger.debug(f"""WAIT RESULT : command = {command}""")
-        try :
-            data = ''
-            start = False
-            i = 0
-            while True:
-                sleep(.5)
-                new_data = self.channel.recv(9999*1000).decode('utf-8')
-                linesNumber = len(new_data.split('\n'))
-                self.logger.debug(f"""WAIT RESULT : new_data = {new_data}""")
-                if new_data :
-                    i = 0
-                    # print(new_data)
-                    data += new_data      
-                    if self.prompt in data :   
-                        data2 = data.splitlines()   
-                        return_data = ''
-                        for line in data2 : 
-                            if command in line : 
-                                start = True
-                            elif not command in line and start == True  and not self.prompt in line and line != '' :
-                                # print(line)
-                                return_data += line +'\n'
-                            if line.startswith(self.prompt) and command not in line :
-                                # print(f"""
-                                # ------------####-----------------
-                                # {return_data}
-                                # ----------------####-------------""")
-                                self.logger.debug(f"""WAIT RESULT : return_data = {return_data}""")
-                                return return_data
-                else  : 
-                    i += 1
-
-                    if i >= self.TIMEOUT*2 :
-                        self.logger.info(f"""TIMEOUT FOR WAIT_RESULT : {command}""")
-                        
-                        
+    def wait_result(self , command , expect=None ) :
         
-        except :
-            print("TIMEOUT!")
+        if not expect :
+            expect= self.prompt
+        
+        self.logger.debug(f"""Wait result syntax : command = {command}""")
+        buffer = ''
+        while True:
+            sleep(.5)
+            try :
+                new_data = self.channel.recv(4194304).decode('utf-8')
+                buffer += new_data
+                self.logger.debug(f"""Appending buffer {new_data}""")
+            except :
+                self.logger.debug(f"""buffer completed""")
+                break
+        nbuffer = ''
+        for index , line in enumerate(buffer.splitlines()) :
+            if command in line and self.prompt in line : 
+                continue
+            nbuffer += line + '\n'
+
+        return nbuffer
+
     
     def get_allcards(self) : 
         self.logger.info("Getting all cards inventory .. ")
@@ -441,6 +424,7 @@ class PSS1830 :
         xcs = xcs.splitlines()
         xcsList = []
         for key , line in enumerate(xcs) : 
+            # print(f">>> {line}")
             # print(line)
             if "------------" in line : continue
             if "A-End" in line or 'OCH Trail' in line or "Admin Oper" in line or "entries" in line or " "*20 in line : continue
@@ -448,19 +432,23 @@ class PSS1830 :
             details = line.split(' ')
             
             details = [ i for i in details if i != "" ]
-            if len(details) == 0 : continue
+            if len(details) == 0 : 
+                continue
             
-            aEnd = details[0]
-            zEnd = details[1]
-            channel = details[2]
-            connectionId = details[3]
-            label = details[4]
-            width = details[5]
-            type = details[6]
-            adminState = details[7]
-            oper = details[8]
-            dir = details[9]
-            
+            try :
+                aEnd = details[0]
+                zEnd = details[1]
+                channel = details[2]
+                connectionId = details[3]
+                label = details[4]
+                width = details[5]
+                type = details[6]
+                adminState = details[7]
+                oper = details[8]
+                dir = details[9]
+            except :
+                continue
+                
             tmp = {'aEnd' : aEnd , 'zEnd' : zEnd , 'channel' : channel , "id" : connectionId ,
                    "label" : label , 'width' : width , "type" : type , "admin" : adminState , 
                    "operation" : oper , 'dir' : dir

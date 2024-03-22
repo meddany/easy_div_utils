@@ -63,3 +63,10 @@ def getScriptDir(f= __file__):
         # The script is run as a standard script
         path = os.path.dirname(os.path.abspath(f))
     return path
+
+def getScriptDirInMachine(f= __file__):
+    '''
+    THis functions aims to return the script dir.
+    '''
+    return os.path.dirname(os.path.abspath(f))
+    
