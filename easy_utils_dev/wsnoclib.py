@@ -1,5 +1,5 @@
 from easy_utils_dev.debugger import DEBUGGER
-import requests , json
+import requests , json , subprocess
 from requests.auth import HTTPBasicAuth as BAuth
 from easy_utils_dev.utils import pingAddress
 from time import sleep
@@ -8,13 +8,14 @@ from urllib3 import disable_warnings
 from threading import Thread
 
 class WSNOCLIB : 
-    def __init__(self, ip , username , password ,debug_level='info'): 
-        self.logger = DEBUGGER('wsnoclib',level=debug_level)
+    def __init__(self, ip , username , password ,debug_level='info', debug_name='wsnoclib'): 
+        self.logger = DEBUGGER(debug_name,level=debug_level)
         self.disabledWarnings = self.disableUrlWarnings()
         self.address = ip
         self.username = username
         self.password = password
         self.baseUrl = self.createBaseUrl()
+
 
     def supress_logs(self) :
         self.logger.disable_print()
@@ -139,8 +140,49 @@ class WSNOCLIB :
         response=self.post( url=url , body=body , headers=headers ,return_json=False )
         return response.json()
 
+    def kafkaSubscribeNspFault(self) :
+        self.logger.info(f'starting to subscribe kafka ... ')
+        url = f'/nbi-notification/api/v1/notifications/subscriptions'
+        self.logger.debug(f'subscribtion url is {url}')
+        headers = {"Content-Type" : "application/json"}
+        self.logger.debug(f'passing kafka headers {headers}')
+        body = {"categories": [{"name": "NSP-FAULT","propertyFilter": "neId IN (\'10.1.170.150\', \'10.1.170.166\', \'10.1.170.179\', \'10.1.170.194\', \'10.1.170.204\') AND (alarmName LIKE \'Incoming Payload LOS%\' OR alarmName LIKE \'Input LOS%\' OR alarmName LIKE \'Intra-nodal topology failure%\')"}]}
+        self.logger.debug(f'passing kafka params to post it {body}')
+        response = self.post(url , headers=headers )
+        self.logger.debug(f'response of kafka subscription {response.text} status_code={response.status_code}')
+        if response.status_code != 200 :
+            self.logger.error(f"failed to subscribe in kafka. return status code is not 200. check debug for more details")
+            return {"status" : 400 , 'topicId' : 0 , 'subscriptionId' : 0 }
+        return {"status" : 200 , 'topicId' : response['response']['data']['topicId'] , 'subscriptionId' : response['response']['data']['subscriptionId'] }
+        
+
+    def kafkaListener(self , topicId , nsposPort=9193 ,over_ssh=False , ssh_user=None , ssh_password=None , ssh_port=22 , buffer_as_yield=True ,  buffer_array=None) :
+        if over_ssh :
+            if not ssh_user or not ssh_password or not ssh_port :
+                self.logger.error(f"kafkaListener is defined to run over ssh tunnel but no ssh params are passed.")
+                raise Exception(f'ssh params are required.')
+        if not buffer_as_yield and buffer_array is None :
+                self.logger.error(f"return buffer as yield is disabled, and no array is passed to store the buffer in.")
+                raise Exception(f'buffer_array is required since buffer_as_yield is disabled.')
+        cli = f"docker exec nspos ./opt/nsp/os/kafka/bin/kafka-console-consumer.sh --bootstrap-server nspos:{nsposPort} --topic {topicId} --consumer.config /opt/nsp/os/kafka/config/consumer.properties"
+        self.logger.debug(f"will start to execute kafka listener cli using:: {cli} ")
+        if not over_ssh :
+            process = subprocess.Popen(cli, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+            for notification in iter(process.stdout.readline, b''):
+                self.logger.debug(f'received notification line:: {notification}')
+                if 'UNKNOWN_TOPIC_OR_PARTITION' in notification.upper() :
+                    self.logger.error(f"kafka listener got an unknown topic or partition error.")
+                    self.logger.debug(f"error in kafka listener : {notification}")
+                    raise Exception(f'Unknown topic or partition')
+                if "ietf-restconf:notification" in str(notification):
+                    if buffer_as_yield :
+                        yield notification.decode().strip()
+                    elif buffer_array is not None :
+                        buffer_array.append(notification.decode().strip())           
+
 if __name__ == '__main__' :
-    noc = WSNOCLIB('135.183.142.226' , 'admin' , 'Nokia@2023') 
-    noc.connect(auto_refresh_token=False)
-    noc.fullSync(nodeName='Site-4' , nodeId=7)
-    noc.logout()
+    # noc = WSNOCLIB('135.183.142.226' , 'admin' , 'Nokia@2023') 
+    # noc.connect(auto_refresh_token=False)
+    # noc.fullSync(nodeName='Site-4' , nodeId=7)
+    # noc.logout()
+    pass

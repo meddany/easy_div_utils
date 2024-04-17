@@ -69,4 +69,57 @@ def getScriptDirInMachine(f= __file__):
     THis functions aims to return the script dir.
     '''
     return os.path.dirname(os.path.abspath(f))
+
+
+
+def is_packed():
+    # Check if the script is running from an executable produced by PyInstaller
+    if getattr(sys, 'frozen', False):
+        return True
+    # Check if the 'bundle' directory exists
+    elif hasattr(sys, '_MEIPASS') and os.path.exists(os.path.join(sys._MEIPASS, 'bundle')):
+        return True
+    else:
+        return False
+
+def get_executable_path(file=__file__) :
+    if is_packed():
+        return os.path.dirname(os.path.realpath(sys.argv[0]))
+    return os.path.dirname(os.path.realpath(file))
+
+def isArgsEmpty(args) :
+    if True in args.__dict__.values() :
+        return False
+    else :
+        return True
     
+def convert_bytes_to_mb(bytes_size,rounded=True):
+    """Convert bytes to megabytes (MB)."""
+    if rounded :
+        # print(f'''
+        # {bytes_size} =>>> {round(float(bytes_size))}
+        # ''')
+        return round(float(bytes_size / (1024 * 1024)))
+    return bytes_size / (1024 * 1024)
+
+def convert_bytes_to_kb(bytes_size,rounded=True):
+    """Convert bytes to kilobytes (KB)."""
+    if rounded :
+        return round(float(bytes_size / 1024))
+    return bytes_size / 1024
+
+def convert_mb_to_bytes(mb_size):
+    return mb_size * 1024 * 1024
+
+def getTimestamp(after_seconds=None) :
+    '''
+    get timestamp now or after few seconds.
+    after_seconds is int.
+    '''
+    if not after_seconds :
+        return int(time.time())
+    return int(time.time()) + int(after_seconds)
+
+
+if __name__ == "__main__":
+    pass

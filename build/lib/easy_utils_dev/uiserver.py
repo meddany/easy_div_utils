@@ -21,9 +21,10 @@ class UISERVER :
         CORS(app,resources={r"/*":{"origins":"*"}})
         self.address= address 
         self.port = port
+        self.httpProtocol = 'http'
         self.socketio = SocketIO(app , cors_allowed_origins="*"  ,async_mode='threading' , engineio_logger=False , always_connect=True ,**kwargs )
         cenv[id] = self
-        self.fullAddress = f"http://{self.address}:{self.port}"
+        self.fullAddress = f"{self.httpProtocol}://{self.address}:{self.port}"
 
     def getInstance(self) :
         return self.getFlask() , self.getSocketio() , self.getWsgi()
@@ -56,8 +57,6 @@ class UISERVER :
             log = logging.getLogger('werkzeug')
             log.setLevel(logging.ERROR)
             wsgi_server.serve_forever()   
-
-
         
         self.flaskprocess = Thread(target=_start)
         self.flaskprocess.daemon = True

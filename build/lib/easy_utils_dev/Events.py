@@ -34,6 +34,11 @@ class EventEmitter:
         env['event_emitter'][id] = self  # Register the event emitter in the global environment
         self.env = env['event_emitter'][id]  # Reference to the event emitter in the global environment
 
+    def isEventSubscribed(self, event):
+        if event in list(self.listeners.keys()) :
+            return True
+        return False
+
     def addEventListener(self, event, callback):
         """
         Adds an event listener for the specified event.
