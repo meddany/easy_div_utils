@@ -2,10 +2,12 @@ setup.py
 easy_utils_dev/EasySsh.py
 easy_utils_dev/Events.py
 easy_utils_dev/__init__.py
+easy_utils_dev/check_license.py
 easy_utils_dev/cplib.py
 easy_utils_dev/custom_env.py
 easy_utils_dev/debugger.py
 easy_utils_dev/encryptor.py
+easy_utils_dev/generate_license.py
 easy_utils_dev/keycloakapi.py
 easy_utils_dev/lralib.py
 easy_utils_dev/ne1830PSS.py
@@ -13,6 +15,7 @@ easy_utils_dev/optics_utils.py
 easy_utils_dev/simple_sqlite.py
 easy_utils_dev/uiserver.py
 easy_utils_dev/utils.py
+easy_utils_dev/winserviceapi.py
 easy_utils_dev/wsnoclib.py
 easy_utils_dev/wsselib.py
 easy_utils_dev.egg-info/PKG-INFO

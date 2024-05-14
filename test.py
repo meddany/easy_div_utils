@@ -1,12 +1,5 @@
-from easy_utils_dev.utils import getTimestamp
+from easy_utils_dev.generate_license import generate_license
+from easy_utils_dev.check_license import verify_license
 
-now = getTimestamp()
-later = getTimestamp(5)
-
-print( now > later )
-
-import time
-time.sleep(10)
-now = getTimestamp()
-
-print( now > later )
+license = generate_license('orion',write_file=False)
+print(license)

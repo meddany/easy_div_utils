@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: easy-utils-dev
-Version: 2.9.3
+Version: 2.15
 Keywords: python3
 Classifier: Programming Language :: Python :: 3
 Requires-Dist: psutil

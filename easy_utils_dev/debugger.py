@@ -5,6 +5,7 @@ from .utils import getRandomKey,  convert_bytes_to_mb , convert_mb_to_bytes
 from .custom_env import custom_env , setupEnvironment
 import json 
 from .Events import EventEmitter
+import subprocess
 
 def setGlobalHomePath( path ) :
     env = custom_env()
@@ -22,7 +23,7 @@ def setGlobalDebugLevel(level='info') :
 
 
 class DEBUGGER:
-    def __init__(self, name, level='info', onscreen=True,log_rotation=3,homePath=None,id=getRandomKey(9) , global_debugger=None,disable_log_write=False):
+    def __init__(self, name, level='info', onscreen=True,log_rotation=3,homePath=None,id=getRandomKey(9) , global_debugger=None,disable_log_write=False,file_name=None):
         env = custom_env()
         env['debugger_on_screen'] = True
         self.env = env
@@ -46,6 +47,7 @@ class DEBUGGER:
         env['debugger'][id] = self
         f = f"[%(asctime)s]-[{name}]-[%(levelname)s]: %(message)s"
         self.formatter = logging.Formatter(f , datefmt='%Y-%m-%d %H:%M:%S' )
+        self.filename = file_name
         path = self.homepath(homePath)
         self.file_handler_class = None
         self.file_handler_class = self.createRotateFileHandler(path)
@@ -163,7 +165,19 @@ class DEBUGGER:
         self.LOG_SIZE_THRESHOLD_IN_BYTES = size
         handler = self.get_rotate_handler()
         handler.maxBytes = size
+        
         return True
+
+    def filesOpenCount(self) :
+        count = subprocess.getoutput('lsof -u root | wc -l')
+        return count
+
+    def close(self) :
+        try :
+            # self.logger.exception('close the logger file. skip this error message')
+            logging.shutdown()
+        except :
+            pass
 
     def homepath(self , path=None ) :
         env = custom_env()
@@ -177,7 +191,10 @@ class DEBUGGER:
                 self.homePath = os.getcwd()
         if not os.path.exists( self.homePath ) :
             os.makedirs( self.homePath )
-        self.homePath = os.path.join( self.homePath, f'{self.name}.log' ) 
+        if self.filename :
+            self.homePath = os.path.join( self.homePath, f'{self.filename}.log' ) 
+        else :
+            self.homePath = os.path.join( self.homePath, f'{self.name}.log' ) 
         return self.homePath
 
     def enable_print(self) :

@@ -11,3 +11,6 @@ from .wsselib import *
 from .lralib import *
 from .keycloakapi import *
 from .cplib import *
+from .winserviceapi import *
+from .generate_license import generate_license
+from .check_license import verify_license

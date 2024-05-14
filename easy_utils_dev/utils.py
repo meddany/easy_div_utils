@@ -3,7 +3,7 @@ import datetime , string , psutil ,secrets , os ,ping3 , time , sys
 
 def getRandomKey(n=10,numbers=True) :
     if numbers :
-        return ''.join(secrets.choice(string.ascii_lowercase + string.digits)
+        return ''.join(secrets.choice(string.digits)
             for i in range(n))
     else :
         return ''.join(secrets.choice(string.ascii_lowercase )

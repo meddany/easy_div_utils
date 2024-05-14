@@ -26,18 +26,19 @@ class CommonPlatformLib :
         self.autoRefreshTokenPeriod = token_refresh_period
         self.client_id=client_id
         self.client_secret=client_secret
-        self.baseUrl = self.updateBaseUrl(address , port )
+        self.baseUrl = self.updateBaseUrl(address)
         self.sessions = {}
         self.auth_timestamp = None
+        self.server_address_array = []
+        self.this_server_address = None
 
     def set_debug_level(self , level ) :
         self.logger.set_level(level)    
 
-    def updateBaseUrl( self, address, port ) :
-        self.baseUrl = f"https://{address}:{port}/wavesuite/cp/admin"
+    def updateBaseUrl( self, address ) :
+        self.baseUrl = f"https://{address}:{self.port}/wavesuite/cp/admin"
         self.logger.debug(f'baseUrl={self.baseUrl}')
         self.address = address
-        self.port = port
         return self.baseUrl
 
     def getBaseUrl(self) :
@@ -125,8 +126,33 @@ class CommonPlatformLib :
         return _h
 
     def getLinuxIpAddress(self) :
-        return subprocess.getoutput(r"ip addr show | grep inet | awk '{print $2}' | cut -d '/' -f1").splitlines()
+        if len(self.server_address_array) == 0 :
+            self.server_address_array = subprocess.getoutput(r"ip addr show | grep inet | awk '{print $2}' | cut -d '/' -f1").splitlines()
+            return self.server_address_array
+        return self.server_address_array
     
+    def getThisServerAddress(self, address1 , address2 ) :
+        if not self.this_server_address :
+            allAddresesArray = self.getLinuxIpAddress()
+            if address1 in allAddresesArray :
+                self.logger.debug(f"This server address is {address1}")
+                self.this_server_address = address1
+                return address1
+            elif address2 in allAddresesArray :
+                self.logger.debug(f"This server address is {address2}")
+                self.this_server_address = address2
+                return address2
+            else :
+                return None
+        return self.this_server_address
+
+    def getRemoteServerAddress( self , address1 , address2 ) :
+        this = self.getThisServerAddress(address1, address2)
+        if address1 == this :
+            return address2
+        elif address2 == this :
+            return address1
+
     def isCurrentServerActive(self) :
         self.logger.info('Checking HA active and standby hosts ..') 
         cli = f"cat /opt/wavesuite/etc/host.info"
@@ -136,6 +162,9 @@ class CommonPlatformLib :
             return True , output
         elif output == 'inactive' :
             return False , output
+        else :
+            return False , 'NOT_VALID'
+
 
     def getActiveServer( self , address1 , address2, update_baseurl=True ) :
         self.logger.info(f'Checking active server status: | {address1} | {address2} ')
@@ -144,29 +173,25 @@ class CommonPlatformLib :
         allAddresesArray = self.getLinuxIpAddress()
         self.logger.debug(f'all interfaces addresses {allAddresesArray}')
         active_address = ''
-        if address1 in allAddresesArray :
-            self.logger.info(f"This server address is {address1}")
-        elif address2 in allAddresesArray :
-            self.logger.info(f"This server address is {address2}")
-        else :
+        thisServerAddress = self.getThisServerAddress(address1 , address2 )
+        if output == 'NOT_VALID' :
+            self.logger.error(f"check active server failed due to unexpected HA status. check host.info file in host VM.")
+            raise Exception(f"check active server failed due to unexpected HA status. check host.info file in host VM.")
+        self.logger.info(f'this server address is {thisServerAddress}')
+        if not thisServerAddress :
             self.logger.error(f"Couldn't determine the this server address. whether {address1} or {address2}.")
             raise Exception(f"Couldn't determine the this server address.")
+        # if the local address is the active server address.
         if isThisServerActive :
             self.logger.debug(f"in statment where local server is active ..")
-            if address1 in allAddresesArray :
-                active_address = address1
-                self.logger.info(f'Setting [this] {active_address} as active server')
-            elif address2 in allAddresesArray :
-                active_address= address2
-                self.logger.info(f'Setting [this] {active_address} as active server')
+            active_address= self.getThisServerAddress(address1 , address2 )
+            self.logger.info(f'Setting [this] {active_address} as active server')
+        # ######################################################################################        
+        # if the remote address is the active server address.
         elif not isThisServerActive :
             self.logger.debug(f"in statment where remote server is active ..")
-            if address1 in allAddresesArray :
-                active_address= address2 
-                self.logger.info(f'Setting [remote] {active_address} as active server')
-            elif address2 in allAddresesArray :
-                active_address= address1 
-                self.logger.info(f'Setting [remote] {active_address} as active server')
+            active_address= self.getRemoteServerAddress(address1 , address2 )
+            self.logger.info(f'Setting [this] {active_address} as active server')
         if update_baseurl:
             self.updateBaseUrl(active_address)
         self.logger.info(f'Checking active server status: | {address1} | {address2} Completed ')
@@ -422,7 +447,6 @@ class CommonPlatformLib :
         else :
             self.logger.error(f'Error {jobName}  {response.text}')
             return False , {}
-        
 
         
 if __name__ == '__main__':

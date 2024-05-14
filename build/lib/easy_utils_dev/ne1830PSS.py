@@ -4,7 +4,7 @@
 
 import sys
 import traceback
-import paramiko , json , csv ,sys
+import paramiko , csv ,sys
 from time import sleep
 from datetime import datetime
 from easy_utils_dev.debugger import DEBUGGER
@@ -12,12 +12,10 @@ from easy_utils_dev.debugger import DEBUGGER
 class PSS1830 :
     
     TIMEOUT = 30
-    PROMPT_RE = None
-    CTRL_C = '\x03'
 
-    def __init__(self , sim=False , debug_name='1830PSSCLI' , auto_enable_tcp_forward=False ) -> None:
+    def __init__(self , sim=False , debug_name='1830PSSCLI' , auto_enable_tcp_forward=False,file_name=None ) -> None:
         self.port = 22
-        self.logger = DEBUGGER(debug_name)
+        self.logger = DEBUGGER(debug_name,file_name=file_name)
         self.connected = False
         self.client = paramiko.SSHClient()
         self.client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
@@ -34,8 +32,8 @@ class PSS1830 :
         self.auto_enable_tcp_forward=auto_enable_tcp_forward
         self.tcpForwardStatus=None
         if self.auto_enable_tcp_forward :
-            self.logger.info(f'WARNING : Auto enable tcp forwarding is enabled. This will allow tcp fowarding in target machine then restarting sshd service agent.')
-
+            self.logger.info(f'***WARNING*** ***WARNING*** : Auto enable tcp forwarding is enabled. This will allow tcp fowarding in target machine then restarting sshd service agent.')
+    
     def set_debug_level( self , level ) :
         self.logger.set_level(level)
 
@@ -58,17 +56,17 @@ class PSS1830 :
                     self.logger.debug(f"""check if tcpfowarding is allowed or not. result is disallowed. fixing .. """)
                     self.fixTcpSSH()
                     self.jumpserver.close()
-                    self.logger.debug(f"""re-establish the connection [ jumpserver ] after modifying the sshd file and restarting the sshd service ..""")
+                    self.logger.debug(f"""re-establish the connection [ JUMPSERVER ] after modifying the sshd file and restarting the sshd service ..""")
                     self.jumpserver  = paramiko.SSHClient()
                     self.jumpserver.set_missing_host_key_policy(paramiko.AutoAddPolicy())
                     self.jumpserver.connect(ip  , self.port , usr , pw )
-            self.logger.info(f"""ssh to nfmt vm nsested ssh  [ ip  =>  {ip} ] [ CONNECTED ]""")
+            self.logger.info(f"""Connecting to WSNOC/NFMT as [JUMPSERVER] [{ip}][CONNECTED]""")
             self.connected = True
             self.jumpserver.nfmtip = ip
             return self.jumpserver
-        except Exception :
-            self.logger.debug(f"""ssh to nfmt vm nsested ssh  [ ip  =>  {ip} ] [ FAILED ]  {traceback.format_exc()} """) 
-            self.logger.error(f"""ssh to nfmt vm nsested ssh  [ ip  =>  {ip} ] [ FAILED ]""")
+        except Exception as error:
+            self.logger.debug(f"""Connecting to WSNOC/NFMT as [JUMPSERVER] [{ip}][FAILED] debug={traceback.format_exc()}""") 
+            self.logger.error(f"""Connecting to WSNOC/NFMT as [JUMPSERVER] [{ip}] [FAILED] [more details in debug] [force exit with status code -1] error={error}""") 
             sys.exit(-1)
 
     def getTcpForwardStatus(self) :
@@ -86,9 +84,14 @@ class PSS1830 :
         cli1 = f"sed -i 's/#AllowTcpForwarding yes/AllowTcpForwarding yes/g' /etc/ssh/sshd_config"
         cli2 = "sed -i 's/#AllowTcpForwarding no/AllowTcpForwarding yes/g' /etc/ssh/sshd_config"
         cli3 = "sed -i 's/AllowTcpForwarding no/AllowTcpForwarding yes/g' /etc/ssh/sshd_config "
+        self.logger.debug(f'executing {cli1}')
+        self.logger.debug(f'executing {cli2}')
+        self.logger.debug(f'executing {cli3}')
         self.jumpserver.exec_command(f"{cli1} ; {cli2} ; {cli3} ; service sshd restart")
+        self.logger.debug('executing fixtcpforward commands are done. service ssh restart also done.')
+        self.logger.debug('checking again the status of tcp forward status after executing fix commands.')
         status , result = self.checkIfTcpForwardingEnabled()
-        self.logger.debug(f"""Current [ modifications done ]  AllowTcpForwarding result  = {result}""") 
+        self.logger.debug(f"""Tcp Forward Fix process completed. AllowTcpForwarding result  = {result}""") 
 
     def rollbackTcp(self) :
         self.logger.info(f"""fixing tcp disable tcpforwarding .. """)
@@ -98,9 +101,14 @@ class PSS1830 :
         cli1 = f"sed -i 's/AllowTcpForwarding yes/#AllowTcpForwarding no/g' /etc/ssh/sshd_config"
         cli2 = "sed -i 's/#AllowTcpForwarding no/AllowTcpForwarding yes/g' /etc/ssh/sshd_config"
         cli3 = "sed -i 's/AllowTcpForwarding yes/AllowTcpForwarding no/g' /etc/ssh/sshd_config "
+        self.logger.debug(f'executing {cli1}')
+        self.logger.debug(f'executing {cli2}')
+        self.logger.debug(f'executing {cli3}')
         self.jumpserver.exec_command(f"{cli1} ; {cli2} ; {cli3} ; service sshd restart")
+        self.logger.debug('executing rollback fixtcpforward commands are done. service ssh restart also done.')
+        self.logger.debug('checking again the status of tcp forward status after executing rollback commands.')
         status , result = self.checkIfTcpForwardingEnabled()
-        self.logger.debug(f"""Current [ modifications done ]  AllowTcpForwarding result  = {result}""") 
+        self.logger.debug(f"""Tcp Forward rollback process completed. AllowTcpForwarding result  = {result}""") 
 
     def checkIfTcpForwardingEnabled(self) :
         """check if port forwarding is enabled in linux machine
@@ -293,11 +301,17 @@ class PSS1830 :
     def disconnect(self) :
         self.close_cliconnection()
         self.client.close()
+        try :
+            self.logger.info('closing logger instance ...')
+            self.logger.close()
+        except :
+            pass
 
 
     def disable_paging(self) :
         cli = f'paging status disable'
         self.cli_execute(cli , wait=False)
+        sleep(.07)
         self.logger.info('paging disabled.')
         
 
@@ -543,7 +557,7 @@ class PSS1830 :
         for key , line in enumerate(odukxs) : 
             try :
                 if "------------" in line : continue
-                if "A-End" in line or 'XcRate' in line or "Admin Oper" in line or "entries" in line or " "*20 in line : continue
+                if "A-End" in line or 'XcRate' in line or 'State' in line: continue
                 details = line.split(' ')
                 details = [ i for i in details if i != "" ]
                 if len(details) == 0 : continue
